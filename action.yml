@@ -125,13 +125,13 @@ runs:
 
     # Pin Python to 3.12 (gdmutant's requires-python floor) for a reproducible install.
     - name: Set up Python
-      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
       with:
         python-version: "3.12"
 
     # SHA-pinned, mirroring ci.yml's selftest jobs (a runner-image migration can't silently break us).
     - name: Set up Godot
-      uses: chickensoft-games/setup-godot@f166999204a4f2722c6fe042fbaa3b3ea0d9c789 # v2.4.1
+      uses: chickensoft-games/setup-godot@ac93246ea68518a384c1c280a496e5989341f2f6 # v2.4.3
       with:
         version: ${{ inputs.godot-version }}
         use-dotnet: ${{ inputs.godot-use-dotnet }}
