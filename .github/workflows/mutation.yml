@@ -96,18 +96,18 @@ jobs:
           persist-credentials: false # this job never uses git creds — don't leave them on the runner
           fetch-depth: 0 # full history — the next step diffs against the base/previous commit
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
 
       # `uv run pytest` below exercises tests/test_htmlreport_behaviour.py, which drives the HTML
       # report's real inlined JS via a real `node` subprocess. Pinned for the same reason ci.yml's
       # own matching step is — see its comment.
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22.14.0"
 
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
         with:
           version: "0.11.28"
           enable-cache: true # cache uv's global store — skips re-downloading the locked deps each job
